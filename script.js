@@ -1,15 +1,9 @@
-
+const btn = document.getElementById('submit');
+btn.addEventListener('click', volume_sphere);
 function volume_sphere() {
-  //Write your code here
-	const radius = document.getElementById('radius');
-	const volume = document.getElementById('volume');
-	let result = 0;
+  const radius = parseFloat(document.getElementById('radius').value);
+  const volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+  document.getElementById('volume').value = volume.toFixed(2);
+}
 
-	const PI=3.141
-	  const r = parseInt(radius.value);
-	  result = 4 / 3 * PI * (r * r * r);
-	  volume.value = result;
-	  return result;
-} 
-
-	// window.onload = document.getElementById('MyForm').onsubmit = volume_sphere;
+window.onload = document.getElementById('MyForm').onsubmit = volume_sphere;
